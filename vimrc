@@ -44,12 +44,25 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 nnoremap <silent><leader>t :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <silent><leader>1 :source ~/.vimrc \| :PlugInstall<CR>
 nnoremap <C-p> :GFiles<Cr>
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
+xnoremap <leader>p "_dP
+
+
+"""" nerdtree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+
 call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'morhetz/gruvbox'
+Plug 'git@github.com:preservim/nerdtree.git'
 call plug#end()
 
 colorscheme  gruvbox      " good colorschemes: murphy, slate, molokai, badwolf, solarized
