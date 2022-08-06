@@ -5,7 +5,8 @@ alias po='ping 8.8.8.8'
 alias op='open'
 alias tch='touch'
 alias md='mkdir'
-alias sndOut='pacmd set-default-sink 2'
+alias sndOut='pacmd set-default-sink 1'
+alias bat='batcat'
 
 # sudo
 alias sd='sudo'
@@ -37,8 +38,8 @@ alias vi3='vim ~/.config/i3/config'
 alias vrc='vim ~/.vimrc'
 
 # galaxy buds
-alias bud='sudo /home/mahdi/dev/scripts/buds.sh'
-
+alias bud='sudo /home/mahdi/dev/scripts/buds.sh && sleep 1 && buds'
+alias buds='~/buds-setting/buds-setting.bin > /dev/null 2>&1 &'
 # bluetooth
 alias blstart='rfkill unblock bluetooth'
 alias blstop='rfkill block bluetooth'
@@ -66,14 +67,17 @@ alias ex='exit'
 alias tx='tmux'
 
 # wifi
-alias wifion='nmcli radio wifi on'
-alias wifioff='nmcli radio wifi off'
-alias wifienable='nmcli radio wifi'
-alias wifilist='nmcli dev wifi list'
-alias wifis='nmcli dev status'
-alias wifiphone='nmcli d wifi connect B2:3A:83:97:B3:B8'
-alias wifihome='nmcli d wifi connect 28:EE:52:D1:59:95'
+alias wion='nmcli radio wifi on'
+alias wioff='nmcli radio wifi off'
+alias wienable='nmcli radio wifi'
+alias wilist='nmcli dev wifi list'
+alias wis='nmcli dev status'
+alias wiphone='nmcli d wifi connect B2:3A:83:97:B3:B8'
+alias wihome='nmcli d wifi connect 28:EE:52:D1:59:95'
 
 # fzf
 alias fbat="fzf --preview 'batcat --style=numbers --color=always --line-range :500 {}'"
 alias vifz="vim ${fzf}"
+
+# game
+alias game='vst && sleep 1 && wilist && sleep 1 && wiphone && bud'
